@@ -1,0 +1,153 @@
+#projects {
+    padding-top: 70px;
+    flex: 1;
+}
+
+#projects h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.projects-grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    transition: 0.2s;
+}
+
+.project-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #31363F;
+    padding: 15px;
+    border: 1px solid #1a1f25;
+    border-radius: 22px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 280px;
+    height: auto;
+    cursor: default;
+    transition: 0.2s;
+}
+
+.project-card .info-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #eee;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.2s;
+}
+
+.project-card .info-icon:hover {
+    color: #c9c9c9;
+}
+
+.project-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    transition: 0.2s;
+}
+
+.project-card p {
+    color: #bdbdbd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.project-card .tech-container {
+    margin: 0px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    align-items: end;
+}
+
+.project-card .tech-b {
+    background-color: #222831;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 11px;
+    transition: 0.2s;
+}
+
+
+.project-card .links {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    align-items: end;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.project-card a {
+    box-sizing: border-box;
+    background-color: #76ABAE;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 15px;
+    width: 100%;
+    padding: 5px 10px;
+    color: #eee;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.2s;
+}
+
+.project-card a:hover {
+    background-color: #76abaec2;
+}
+
+.project-card .gitHub {
+    background-color: #000;
+    color: #fafbfc;
+}
+
+.project-card .gitHub:hover {
+    background-color: #222222;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        margin-bottom: 100px;
+    }
+
+    .project-card .links {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .project-card a {
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 15px;
+    }
+
+    .project-card .tech-b {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    .project-card h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+}
