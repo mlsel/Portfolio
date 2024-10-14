@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Heim from './components/Home';
@@ -22,7 +22,6 @@ function App() {
   };
 
   return (
-    <Router>
       <div className="App">
         <Header scrollToHome={scrollToHome} />
         <Routes>
@@ -56,7 +55,6 @@ function App() {
           />
         </Routes>
       </div>
-    </Router>
   );
 }
 

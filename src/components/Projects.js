@@ -27,7 +27,6 @@ const Projects = () => {
             <p>{project.description}</p>
             <div className="links">
               <a href={project.githubLink} className="gitHub" target="_blank" rel="noopener noreferrer"><FaGithub />GitHub</a>
-              <br />
               <a href={project.livesiteLink} target="_blank" rel="noopener noreferrer"><FaLink />Nettside</a>
             </div>
           </div>
