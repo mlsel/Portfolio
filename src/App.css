@@ -1,6 +1,34 @@
-:root {
-  --accent: #76ABAE;
-  --accent-hover: #76abaec2;
+.rs-theme-dark, :root {
+  --rs-primary-50: #edfffe;
+  --rs-primary-100: #d3f0ef;
+  --rs-primary-200: #b8dede;
+  --rs-primary-300: #a1cecf;
+  --rs-primary-400: #8abbbd;
+  --rs-primary-500: #76abad;
+  --rs-primary-600: #56a3a8;
+  --rs-primary-700: #36959e;
+  --rs-primary-800: #18838f;
+  --rs-primary-900: #006c7a;
+  
+  --rs-bg-overlay: #222831;
+
+  --primary-dark: #3b4049;
+  --primary-light: #31363F;
+  --accent-gradient-start: #76ABAE;
+  --accent-gradient-end: #FFB0B0;
+  --link-hover: #609598;
+  --tech-bg: #4A4F59;
+
+  /* Text Colors */
+  --text-primary: #eee;
+  --text-secondary: #bdbdbd;
+
+  /* Shadows */
+  --box-shadow-light: rgba(0, 0, 0, 0.3);
+  --box-shadow-dark: rgba(0, 0, 0, 0.5);
+
+  --accent: var(--rs-primary-600);
+  --accent-hover: var(--rs-primary-500);
   --color-primary: #222831;
   --color-secondary: #31363F;
   --color-tertiary: #EEEEEE;
@@ -24,6 +52,17 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: var(--color-primary);
+}
+
+.App::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--accent-gradient-start), var(--accent-gradient-end));
+  z-index: 1;
 }
 
 input,

@@ -1,11 +1,132 @@
-#about h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+/* About Section */
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: var(--rs-bg-overlay);
 }
 
-#about p {
-    max-width: 800px;
-    margin: 0 auto;
+.about-card {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background: linear-gradient(145deg, var(--primary-dark), var(--primary-light));    box-shadow: 0 4px 10px var(--box-shadow-dark);
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%;
+    overflow: hidden;
+    gap: 20px;
+}
+
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-gradient-start), var(--accent-gradient-end));
+    z-index: 1;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    max-width: 150px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.about-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--text-primary);
+}
+
+.about-content h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 110px;
+    font-size: 1em;
+    color: var(--text-primary);
+    background-color: var(--rs-primary-600);
+    padding: 5px 15px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+.location-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
     font-size: 1.2em;
+}
+
+.about-content .text {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 390px;
+}
+
+
+.about-content .text p {
+    font-size: 1em;
     line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .about-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-image {
+        max-width: 120px;
+    }
+
+    .about-content {
+        gap: 15px;
+    }
+
+    .about-content h2 {
+        font-size: 1.8em;
+    }
+
+    .location {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-content .text {
+        gap: 5px;
+        max-height: 300px;
+    }
 }

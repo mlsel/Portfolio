@@ -1,0 +1,119 @@
+.rs-modal-dialog {
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+}
+
+.rs-modal-dialog::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-gradient-start), var(--accent-gradient-end));
+    z-index: 1;
+}
+
+.rs-modal-header {
+    background: #31363F;
+    border-radius: 50px;
+    padding: 20px;
+}
+
+.rs-modal-title {
+    font-size: 1.8em !important;
+    font-weight: bold !important;
+}
+
+.rs-modal-body {
+    padding: 20px;
+}
+
+.rs-modal-body p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.rs-modal-body h4 {
+    font-size: 1.4em;
+}
+
+.rs-modal-body ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: start;
+}
+
+.rs-modal-body li {
+    background: #4A4F59;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.rs-modal-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.rs-btn {
+    border-radius: 30px !important;
+    padding: 10px 20px !important;
+    font-size: 1em !important;
+}
+
+.custom-slider {
+    margin-bottom: 10px;
+    border-radius: 14px;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.custom-slider .rs-carousel-slider-item {
+    object-fit: cover !important;
+}
+  
+
+@media (max-width: 768px) {
+    .rs-modal-title {
+        font-size: 1.5em !important;
+    }
+
+    .rs-modal-body p {
+        font-size: 1em;
+    }
+
+    .rs-modal-footer {
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rs-btn {
+        width: 100%;
+        text-align: center;
+        margin-left: 0px !important;
+    }
+}
+
+@media (max-width: 590px) {
+
+    .rs-modal-footer {
+        flex-direction: column;
+    }
+
+    .rs-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

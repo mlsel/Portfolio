@@ -1,157 +1,192 @@
 #projects {
-    padding-top: 70px;
+    padding-top: 100px !important;
     flex: 1;
+    padding-bottom: 40px !important;
 }
 
 #projects h2 {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2em; /* Slightly smaller on mobile */
     margin-bottom: 40px;
+    font-weight: bold;
 }
 
 .projects-grid {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 15px;
-    max-width: 900px;
+    flex-wrap: wrap; /* Allows items to wrap to the next row */
+    gap: 20px; /* Spacing between items */
+    justify-content: center; /* Centers the items */
+    max-width: 1200px;
     margin: 0 auto;
-    margin-bottom: 50px;
-    transition: 0.2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .project-card {
     position: relative;
+    flex: 1 1 calc(33.333% - 20px); /* Each card takes up 1/3 of the row minus the gap */
+    max-width: calc(33.333% - 20px); /* Ensure cards don’t exceed 1/3 of the row */
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #31363F;
-    padding: 15px;
-    border: 1px solid #1a1f25;
-    border-radius: 22px;
+    background: linear-gradient(145deg, var(--primary-dark), var(--primary-light));
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px var(--box-shadow-light);
+    padding: 20px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 280px;
-    height: auto;
-    cursor: default;
-    transition: 0.2s;
-}
-
-.project-card .info-icon {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    color: #eee;
     cursor: pointer;
-    font-size: 20px;
-    transition: 0.2s;
 }
 
-.project-card .info-icon:hover {
-    color: #c9c9c9;
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 20px var(--box-shadow-dark);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-gradient-start), var(--accent-gradient-end));
+    z-index: 1;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 10px;
 }
 
 .project-card h3 {
     font-size: 18px;
     margin: 10px 0;
-    transition: 0.2s;
+    font-weight: 600;
 }
 
 .project-card p {
-    color: #bdbdbd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    height: calc(1.4em * 4);
 }
 
-.project-card .tech-container {
-    margin: 0px 0px;
+.project-card p.full {
+    -webkit-line-clamp: unset;
+    height: auto;
+}
+
+/* Tech Stack */
+.tech-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
     justify-content: center;
-    align-items: end;
+    margin-bottom: 15px;
 }
 
-.project-card .tech-b {
-    background-color: #222831;
-    color: white;
-    padding: 5px 10px;
+.tech-b {
+    display: inline-flex;
+    align-items: center;
+    background: var(--tech-bg);
+    padding: 6px 10px;
     border-radius: 50px;
-    font-size: 11px;
-    transition: 0.2s;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: capitalize;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-
+/* Links */
 .project-card .links {
-    position: relative;
-    flex: 1;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 5px;
-    align-items: end;
-    width: 100%;
-    transition: 0.2s;
+    justify-content: space-around;
+    gap: 10px;
 }
 
 .project-card a {
-    box-sizing: border-box;
-    background-color: #76ABAE;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    font-size: 15px;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--accent-gradient-start);
     width: 100%;
-    padding: 5px 10px;
-    color: #eee;
-    text-decoration: none;
+    color: var(--text-primary);
+    padding: 10px 15px;
     border-radius: 50px;
-    transition: 0.2s;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .project-card a:hover {
-    background-color: #76abaec2;
+    background-color: var(--link-hover);
+    transform: scale(1.05);
 }
 
-.project-card .gitHub {
-    background-color: #000;
-    color: #fafbfc;
-}
-
-.project-card .gitHub:hover {
-    background-color: #222222;
-}
-
+/* Responsive Styling */
 @media (max-width: 768px) {
-    .projects-grid {
-        margin-bottom: 100px;
-    }
-
-    .project-card .links {
-        flex-direction: column;
-        align-items: center;
-        gap: 0px;
-    }
-
-    .project-card a:first-child {
-        margin-bottom: 10px;
-    }
-
-    .project-card a {
-        justify-content: center;
-        gap: 10px;
-        padding: 10px 15px;
-    }
-
-    .project-card .tech-b {
-        padding: 7px 12px;
-        font-size: 12px;
+    .project-card {
+        flex: 1 1 calc(50% - 20px); /* Switch to 2 cards per row */
+        max-width: calc(50% - 20px);
     }
 
     .project-card h3 {
-        font-size: 22px;
-        margin-bottom: 15px;
+        font-size: 16px; /* Smaller title */
+    }
+
+    .project-card p {
+        font-size: 13px;
+        -webkit-line-clamp: 3; /* Reduce line clamp */
+        height: calc(1.4em * 3);
+    }
+
+    .tech-b {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+
+    .project-card a {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        flex: 1 1 100%; /* Full width on smaller screens */
+        max-width: 100%;
+    }
+
+    .project-card h3 {
+        font-size: 15px;
+    }
+
+    .project-card p {
+        font-size: 12px;
     }
 }

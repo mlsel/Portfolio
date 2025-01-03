@@ -22,13 +22,27 @@
 }
 
 #contact .contact-item {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    border-radius: 14px;
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s;
+}
+
+#contact .contact-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-gradient-start), var(--accent-gradient-end));
+    z-index: 1;
 }
 
 #contact .icon {
@@ -43,7 +57,7 @@
 }
 
 #contact .contact-link {
-    color: #76ABAE;
+    color: var(--accent);
     text-decoration: none;
 }
 

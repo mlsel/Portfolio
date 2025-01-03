@@ -1,12 +1,15 @@
 import React, { useRef } from 'react';
 import { Route, Routes} from 'react-router-dom';
-import './App.css';
 import Header from './components/Header';
 import Heim from './components/Home';
 import Om from './components/About';
 import Prosjekter from './components/Projects';
 import Kontakt from './components/Contact';
 import Footer from './components/Footer';
+import { CustomProvider } from 'rsuite';
+import 'rsuite/dist/rsuite.min.css';
+import './App.css';
+
 
 function App() {
 
@@ -22,6 +25,7 @@ function App() {
   };
 
   return (
+    <CustomProvider theme="dark">
       <div className="App">
         <Header scrollToHome={scrollToHome} />
         <Routes>
@@ -55,6 +59,7 @@ function App() {
           />
         </Routes>
       </div>
+      </CustomProvider>
   );
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import { Button} from 'rsuite';
 import { FaAngleDown } from "react-icons/fa6";
 
 const Home = React.forwardRef(({ scrollToAbout }, ref) => {
@@ -10,12 +11,13 @@ const Home = React.forwardRef(({ scrollToAbout }, ref) => {
       <section className="hero" ref={ref} id="heim">
         <div className="content">
           <h1>Hei, jeg er Magnar</h1>
-          <p>Jeg er en Front-End Utvikler, opptatt av å skisse og utvikle brukervennlige nettsider.</p>
-          <Link to="/prosjekter"><button className="cta-button">Sjekk ut mine prosjekt</button></Link>
+          <p>Jeg er en Front-End Utvikler, opptatt av å skisse og utvikle brukervennlige webapplikasjoner.</p>
+          <Link to="/prosjekter"><Button size="lg" className="cta-button" appearance="primary">Sjekk ut mine prosjekt</Button>
+          </Link>
 
-          <button className="scroll-arrow" onClick={scrollToAbout}>
+          <span className='scroll-arrow'><Button className='arrow' onClick={scrollToAbout}>
             Om meg <FaAngleDown />
-          </button>
+          </Button></span>
         </div>
       </section>
     </>

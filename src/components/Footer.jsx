@@ -4,7 +4,7 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer>
-      <p>&copy; 2024 Magnar. All rights reserved.</p>
+      <p>&copy; 2025 Magnar. All rights reserved.</p>
     </footer>
   )
 };

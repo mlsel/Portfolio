@@ -21,14 +21,9 @@
     font-size: 22px;
 }
 
-.cta-button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 0.2s;
+.cta-button.rs-btn {
+    margin-top: 25px;
+    font-size: 16px !important;
 }
 
 .scroll-arrow {
@@ -37,18 +32,18 @@
     align-items: center;
     gap: 5px;
     bottom: 20px;
-    background-color: #31363F;
     color: #EEEEEE;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 50px;
     transition: 0.2s;
 }
 
-.scroll-arrow:hover {
-    color: #76ABAE;
-    background-color: #31363F;
+.arrow {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 @media (max-width: 768px) {
@@ -60,7 +55,5 @@
         bottom: 0px;
         margin-top: 20px;
         margin-top: 15px;
-        padding: 10px 20px;
-        font-size: 18px;
     }
 }
