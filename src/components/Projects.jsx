@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './Projects.css';
-import './Modal.css';
+import '../styling/Projects.css';
+import '../styling/Modal.css';
 import projects from '../data/projectsData';
 import { FaGithub, FaLink } from "react-icons/fa6";
 import { Modal, Button, Carousel } from 'rsuite';
@@ -86,7 +86,7 @@ const Projects = () => {
               target="_blank"
               startIcon={<FaGithub />}
             >
-              View on GitHub
+              Vis på GitHub
             </Button>
             {selectedProject.livesiteLink && (
               <Button
@@ -95,11 +95,11 @@ const Projects = () => {
                 target="_blank"
                 startIcon={<FaLink />}
               >
-                Live Site
+                Nettside
               </Button>
             )}
             <Button onClick={closeModal} appearance="default">
-              Close
+              Lukk
             </Button>
           </Modal.Footer>
         </Modal>

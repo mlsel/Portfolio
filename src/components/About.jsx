@@ -1,5 +1,5 @@
 import React from 'react';
-import './About.css';
+import '../styling/About.css';
 import { FaLocationDot } from "react-icons/fa6";
 
 const About = React.forwardRef((props, ref) => {

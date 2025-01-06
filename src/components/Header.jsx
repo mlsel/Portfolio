@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaEnvelope } from 'react-icons/fa';
 import { PiHouseFill, PiFolderFill } from "react-icons/pi";
-import './Header.css';
+import '../styling/Header.css';
 
 const Header = ({ scrollToHome }) => {
   const [isMobile, setIsMobile] = useState(false);
