@@ -15,6 +15,7 @@ import {
   FaCode,
   FaServer
 } from "react-icons/fa";
+import { SiCraftcms } from "react-icons/si";
 import { Modal, Button, Carousel, Badge } from 'rsuite';
 
 // Tech stack icon mapping
@@ -27,7 +28,8 @@ const techIcons = {
   'TypeScript': FaCode,
   'Bootstrap': FaBootstrap,
   'API': FaServer,
-  'WordPress REST API': FaWordpress
+  'WordPress REST API': FaWordpress,
+  'Craft CMS': SiCraftcms
 };
 
 const Projects = () => {
@@ -132,14 +134,16 @@ const Projects = () => {
           </Modal.Body>
 
           <Modal.Footer>
-            <Button
-              appearance="primary"
-              href={selectedProject.githubLink}
-              target="_blank"
-              startIcon={<FaGithub />}
-            >
-              Vis på GitHub
-            </Button>
+            {selectedProject.githubLink && (
+              <Button
+                appearance="primary"
+                href={selectedProject.githubLink}
+                target="_blank"
+                startIcon={<FaGithub />}
+              >
+                Vis på GitHub
+              </Button>
+            )}
             {selectedProject.livesiteLink && (
               <Button
                 appearance="ghost"

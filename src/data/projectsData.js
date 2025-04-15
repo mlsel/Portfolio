@@ -1,5 +1,16 @@
 const projects = [
     {
+        id: 8,
+        title: "Selheim Web",
+        images: ["https://i.imgur.com/e82csMo.png"], // You'll need to replace this with actual screenshot
+        description: "En moderne nettside for webutvikling og design tjenester.",
+        longDescription: "Selheim Web er en profesjonell nettside som tilbyr webutvikling og design tjenester. Nettsiden er bygget med moderne teknologier som React og TypeScript for robust funksjonalitet, styling med SCSS og Bootstrap for et responsivt design, og Craft CMS for innholdsadministrasjon. Fokuset er på å presentere tjenester og prosjekter på en elegant og brukervennlig måte.",
+        tech: ["TypeScript", "React", "SCSS", "Bootstrap", "Craft CMS", "API"],
+        livesiteLink: "https://selheimweb.no/",
+        githubLink: "",
+        liveSiteWorks: true
+    },
+    {
         id: 1,
         title: "Holidaze",
         images: ["https://i.imgur.com/Mg0Sh7Y.jpeg", "https://i.imgur.com/CzDkZZT.jpeg", "https://i.imgur.com/GpfUyAP.png"],
