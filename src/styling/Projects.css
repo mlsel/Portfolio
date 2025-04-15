@@ -35,7 +35,7 @@
 .project-card {
     position: relative;
     flex: 1 1 calc(33.333% - 20px); /* Each card takes up 1/3 of the row minus the gap */
-    max-width: calc(33.333% - 20px); /* Ensure cards don’t exceed 1/3 of the row */
+    max-width: calc(33.333% - 20px); /* Ensure cards don't exceed 1/3 of the row */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -48,6 +48,8 @@
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
 }
 
 .project-card:hover {
@@ -66,11 +68,32 @@
     z-index: 1;
 }
 
+.project-card-header {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.status-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 4px 8px;
+    border-radius: 20px;
+}
+
 .project-image {
     width: 100%;
     height: auto;
     border-radius: 15px;
-    margin-bottom: 10px;
+    transition: filter 0.3s ease;
+    display: block;
+}
+
+.project-card:hover .project-image {
+    filter: brightness(0.8);
 }
 
 .project-card h3 {
@@ -110,6 +133,7 @@
 .tech-b {
     display: inline-flex;
     align-items: center;
+    gap: 5px;
     background: var(--tech-bg);
     padding: 6px 10px;
     border-radius: 50px;
@@ -118,6 +142,65 @@
     color: var(--text-primary);
     text-transform: capitalize;
     transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.tech-b:hover {
+    transform: translateY(-2px);
+}
+
+.tech-icon {
+    font-size: 14px;
+}
+
+/* Card Overlay */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 15px;
+}
+
+.card-overlay span {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.project-card:hover .card-overlay {
+    opacity: 1;
+}
+
+/* Modal Styles */
+.modal-tech-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.modal-tech-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--tech-bg);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+.carousel-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 14px;
 }
 
 /* Links */

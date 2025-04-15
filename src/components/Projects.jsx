@@ -2,8 +2,33 @@ import React, { useState } from 'react';
 import '../styling/Projects.css';
 import '../styling/Modal.css';
 import projects from '../data/projectsData';
-import { FaGithub, FaLink } from "react-icons/fa6";
-import { Modal, Button, Carousel } from 'rsuite';
+import { 
+  FaGithub, 
+  FaLink,
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaSass,
+  FaBootstrap,
+  FaWordpress,
+  FaJs,
+  FaCode,
+  FaServer
+} from "react-icons/fa";
+import { Modal, Button, Carousel, Badge } from 'rsuite';
+
+// Tech stack icon mapping
+const techIcons = {
+  'React': FaReact,
+  'HTML': FaHtml5,
+  'CSS': FaCss3Alt,
+  'SCSS': FaSass,
+  'JavaScript': FaJs,
+  'TypeScript': FaCode,
+  'Bootstrap': FaBootstrap,
+  'API': FaServer,
+  'WordPress REST API': FaWordpress
+};
 
 const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,18 +53,33 @@ const Projects = () => {
             className="project-card"
             key={project.id || index}
             onClick={() => openModal(project)}
+            style={{ animationDelay: `${index * 0.1}s` }}
           >
             <div className="project-card-header">
               {project.images && project.images[0] && (
                 <img src={project.images[0]} alt={`${project.title} mockup`} className="project-image" />
               )}
+              {!project.liveSiteWorks && (
+                <div className="status-badge">
+                  <Badge content="Offline" color="red" />
+                </div>
+              )}
             </div>
             <h3>{project.title}</h3>
             <p>{project.description}</p>
             <div className="tech-container">
-              {project.tech.map((item, techIndex) => (
-                <span key={techIndex} className={`tech-b ${item.toLowerCase()}`}>{item}</span>
-              ))}
+              {project.tech.map((item, techIndex) => {
+                const IconComponent = techIcons[item];
+                return (
+                  <span key={techIndex} className={`tech-b ${item.toLowerCase()}`}>
+                    {IconComponent && <IconComponent className="tech-icon" />}
+                    {item}
+                  </span>
+                );
+              })}
+            </div>
+            <div className="card-overlay">
+              <span>Klikk for mer informasjon</span>
             </div>
           </div>
         ))}
@@ -48,7 +88,12 @@ const Projects = () => {
       {selectedProject && (
         <Modal size={"md"} open={isOpen} onClose={closeModal}>
           <Modal.Header closeButton={false}>
-            <Modal.Title>{selectedProject.title}</Modal.Title>
+            <Modal.Title style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              {selectedProject.title}
+              {!selectedProject.liveSiteWorks && (
+                <Badge content="Offline" color="red" />
+              )}
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             {selectedProject.images.length > 1 ? (
@@ -58,6 +103,7 @@ const Projects = () => {
                     key={index}
                     src={image}
                     alt={`${selectedProject.title} - Slide ${index + 1}`}
+                    className="carousel-image"
                   />
                 ))}
               </Carousel>
@@ -71,11 +117,17 @@ const Projects = () => {
             <p>{selectedProject.longDescription || "Ingen ekstra informasjon tilgjengelig."}</p>
             <div>
               <h4>Tech Stack:</h4>
-              <ul>
-                {selectedProject.tech.map((tech, index) => (
-                  <li key={index}>{tech}</li>
-                ))}
-              </ul>
+              <div className="modal-tech-container">
+                {selectedProject.tech.map((tech, index) => {
+                  const IconComponent = techIcons[tech];
+                  return (
+                    <div key={index} className="modal-tech-item">
+                      {IconComponent && <IconComponent className="tech-icon" />}
+                      <span>{tech}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </Modal.Body>
 
@@ -94,6 +146,7 @@ const Projects = () => {
                 href={selectedProject.livesiteLink}
                 target="_blank"
                 startIcon={<FaLink />}
+                disabled={!selectedProject.liveSiteWorks}
               >
                 Nettside
               </Button>

@@ -26,11 +26,11 @@ const projects = [
         title: "Quantum Realm",
         images: ["https://i.imgur.com/pvOzhaJ.png"],
         description: "En nettblogg om teknologi og gaming.",
-        longDescription: "Quantum Realm er en nettblogg dedikert til teknologi og gaming, hvor brukere kan lese artikler om de nyeste trendene innen spill, maskinvare og programvare. Bloggen er designet for å være brukervennlig, med fokus på rask lastetid og enkel navigasjon. Den bruker WordPress REST API for å hente innhold dynamisk, og grensesnittet er bygget med HTML, CSS og JavaScript for optimal ytelse. NB: For tiden er ikke WordPress REST APIen online!",
+        longDescription: "Quantum Realm er en nettblogg dedikert til teknologi og gaming, hvor brukere kan lese artikler om de nyeste trendene innen spill, maskinvare og programvare. Bloggen er designet for å være brukervennlig, med fokus på rask lastetid og enkel navigasjon. Den bruker WordPress REST API for å hente innhold dynamisk, og grensesnittet er bygget med HTML, CSS og JavaScript for optimal ytelse.",
         tech: ["HTML", "CSS", "JavaScript", "WordPress REST API", "API"],
         livesiteLink: "https://graceful-platypus-103f1f.netlify.app/",
         githubLink: "https://github.com/Noroff-FEU-Assignments/project-exam-1-maglus02",
-        liveSiteWorks: false
+        liveSiteWorks: true
     },
     {
         id: 4,
